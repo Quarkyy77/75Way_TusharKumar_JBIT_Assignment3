@@ -1,7 +1,15 @@
 import { FunctionComponent } from "react";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const TextFrame: FunctionComponent = () => {
+const TextFrame = () => {
+  const navigate = useNavigate();
+  const HandleRegister = () => {
+    navigate("/register");
+  };
+  const HandleLogin = () => {
+    navigate("/login");
+  };
   return (
     <section className="self-stretch flex flex-row items-start justify-end py-[0rem] px-[0rem] box-border max-w-full text-left text-[2.88rem] text-white font-noto-sans">
       <div className="flex-1 flex flex-col items-end justify-start py-[0rem] pr-[0rem] pl-[0.13rem] box-border gap-[7.38rem] bg-[url('/public/header-image-1@2x.png')] bg-cover bg-no-repeat bg-[top] max-w-full mq450:gap-[7.38rem] mq750:gap-[7.38rem]">
@@ -27,6 +35,7 @@ const TextFrame: FunctionComponent = () => {
             </div>
             <div className="w-[11.69rem] flex flex-row items-start justify-start gap-[0.94rem] mq450:hidden">
               <Button
+                onClick={HandleLogin}
                 className="h-[1.75rem] flex-[0.6444] z-[1]"
                 disableElevation={true}
                 variant="contained"
@@ -43,6 +52,7 @@ const TextFrame: FunctionComponent = () => {
                 Login
               </Button>
               <Button
+                onClick={HandleRegister}
                 className="h-[1.75rem] flex-1 z-[1]"
                 disableElevation={true}
                 variant="contained"
